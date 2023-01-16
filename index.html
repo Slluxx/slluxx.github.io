@@ -1,15 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calvin Fuchs Portfolio</title>
+    <meta name="description"
+        content="Custom CSS build with the Bootstrap grid system to manage complex grid layouts in Pico.">
+    <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+        :root {
+            --spacing-company: 3rem;
+            --font-weight: 400;
+            --border-radius: 0;
+        }
+
+        /* Typography */
+        h2,
+        h3,
+        hgroup> :last-child {
+            font-weight: 200;
+        }
+
+        small {
+            color: var(--muted-color);
+        }
+
+
+        /* Header */
+        .hero {
+            background-color: #394046;
+            background-image: url("assets/sascha-eremin-DNQ-M93tHmA-unsplash-3000x1000.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        header {
+            padding: var(--spacing-company) 0;
+        }
+
+        header hgroup> :last-child {
+            color: var(--h3-color);
+        }
+
+        header hgroup {
+            margin-bottom: var(--spacing-company);
+        }
+
+        /* Nav */
+        summary[role="link"].contrast:is([aria-current], :hover, :active, :focus) {
+            background-color: transparent;
+            color: var(--contrast-hover);
+        }
+
+        /* Main */
+        @media (min-width: 992px) {
+            main .grid {
+                grid-column-gap: var(--spacing-company);
+                grid-template-columns: auto 25%;
+            }
+        }
+
+        form.grid {
+            grid-row-gap: 0;
+        }
+
+        /* Aside nav */
+        aside img {
+            margin-bottom: 0.25rem;
+        }
+
+        aside p {
+            margin-bottom: var(--spacing-company);
+            line-height: 1.25;
+        }
+
+        .test {
+            box-shadow: inset 0 -58px 11px -26px #11191f;
+            position: relative;
+        }
+
+        .particles-js-canvas-el {
+            position: absolute !important;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="test">
+        <div id="particles-js"></div>
+        <header class="container">
+            <hgroup>
+                <h1>Hi, my name is Calvin.</h1>
+                <h2>I am a fullstack programmer with a passion for hacking & reverse-engineering,</br>unlocking the
+                    power of
+                    technology, one line of code at a time.</a></h2>
+            </hgroup>
+        </header>
+    </div>
 
-  <h1>Soon</h1>
-  <small>powered by vue</small>
+    <!--
+    <section class="container">
+        <p>With a decade of experience in software development, I have honed my skills in creating efficient,
+            well-designed full stack applications. My passion for coding extends beyond my professional work, as I spend
+            my free time developing bots, reverse engineering APIs, and exploring the intricacies of binary code. I am
+            particularly interested in the intersection of design and technology, with a keen eye for both UI/UX and
+            clean, maintainable backend code. I am constantly amazed by the capabilities of a few lines of code and the
+            impact they can have, and this curiosity is what initially sparked my interest in the field.</p>
+    </section>
+    -->
+
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>About me</h2>
+                    <!--<h3>if you read this, you are cool</h3>-->
+                </hgroup>
+                <p>With over a decade of experience in software development, I have honed my skills in creating
+                    efficient,
+                    well-designed full stack applications. </br></br>My passion for coding extends beyond my
+                    professional work, as I spend
+                    my free time developing bots, reverse engineering APIs, and exploring the intricacies of binary
+                    code. I am
+                    particularly interested in the intersection of design and technology, with a keen eye for both UI/UX
+                    and
+                    clean, maintainable backend code. </br></br>I am constantly amazed by the capabilities of a few
+                    lines of code and the
+                    impact they can have, and this curiosity is what initially sparked my interest in the field.</p>
+
+                <!--
+                <figure>
+                    <img width="450px" src="assets/pokemontv.jpg" alt="Architecture" title="">
+                    <figcaption>Image from <a href="https://unsplash.com/photos/3Ijt7UkSBYE"
+                            target="_blank">unsplash.com</a></figcaption>
+                </figure>
+                 -->
+
+
+                <h3>Get in touch</h3>
+                <p>
+                <ul>
+                    <li><a href="#" data-contact="ZnVjaHMuY2FsdmluQGdteC5uZXQ=" data-subj="TGV0cyBnZXQgaW4gdG91Y2g="
+                        onmouseover="this.href = 'mailto:' + atob(this.dataset.contact) + '?subject=' + atob(this.dataset.subj || '')">
+                            Send an email
+                        </a></li>
+                    <li>
+                        Discord: Slluxx#7598
+                    </li>
+                </ul>
+                </p>
+
+            </section>
+
+            <aside>
+                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img src="assets/dslogo.png"
+                        width="450px" alt="Architecture"></a>
+                <p>
+                    <a href="https://github.com/Team-Neptune/DeepSea" onclick="event.preventDefault()">Team Neptune's
+                        DeepSea</a><br>
+                    <small>A custom firmware package for the Nintendo Switch including self-developed homebrew</small>
+                </p>
+                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img src="assets/bansync.jpg"
+                        width="450px" alt="Architecture"></a>
+                <p>
+                    <a href="#" onclick="event.preventDefault()">BanSync</a><br>
+                    <small>A discord bot to review & manage bans across servers</small>
+                </p>
+                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img width="450px"
+                        src="assets/pokemontv.jpg" alt="Architecture" title=""></a>
+                <p>
+                    <a href="#" onclick="event.preventDefault()">PokemonTV</a><br>
+                    <small>An unofficial (but legal) 3rd party auto-updating PokemonTV client</small>
+                </p>
+            </aside>
+
+        </div>
+    </main><!-- ./ Main -->
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="container">
+        <small>
+
+            <img alt="GitHub User's stars"
+                src="https://img.shields.io/github/stars/slluxx?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=GitHub%20Stars&style=flat-square">
+
+            •
+
+            Other stats soon
+
+        </small>
+    </footer><!-- ./ Footer -->
+
+    <script src="assets/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 30,
+                    "density": {
+                        "enable": true,
+                        "value_area": 394.57382081613633
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.1,
+                    "random": false,
+                    "anim": {
+                        "enable": true,
+                        "speed": .1,
+                        "opacity_min": 0.1,
+                        "sync": true
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3.1565905665290903,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "bounce",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 179.82017982017982,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 40.0,
+                        "size": 10.0,
+                        "duration": 2,
+                        "opacity": 0.2,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+
+
 </body>
 
 </html>
