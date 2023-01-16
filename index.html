@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calvin Fuchs - Portfolio</title>
-    <meta name="description"
-        content="My personal page.">
+    <meta name="description" content="My personal page.">
     <link rel="shortcut icon" href="assets/images/cf.png">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <link rel="stylesheet" href="assets/css/custom.css">
@@ -68,7 +67,7 @@
                 <p>
                 <ul>
                     <li><a href="#" data-contact="ZnVjaHMuY2FsdmluQGdteC5uZXQ=" data-subj="TGV0cyBnZXQgaW4gdG91Y2g="
-                        onmouseover="this.href = 'mailto:' + atob(this.dataset.contact) + '?subject=' + atob(this.dataset.subj || '')">
+                            onmouseover="this.href = 'mailto:' + atob(this.dataset.contact) + '?subject=' + atob(this.dataset.subj || '')">
                             Send an Email
                         </a></li>
                     <li>
@@ -85,11 +84,13 @@
                 <p>
                     <a href="https://github.com/Team-Neptune/DeepSea" onclick="event.preventDefault()">Team Neptune's
                         DeepSea</a><br>
-                    <small>A custom firmware package for the Nintendo Switch including self-developed homebrew</small>
+                    <small>A custom firmware package for the Nintendo Switch</small></br>
+                    <img
+                        src="https://camo.githubusercontent.com/1d3ad2548fb8c3d19377aa1713a9f514706cc750d64aca4574b117515f599a8e/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732f5465616d2d4e657074756e652f446565705365612f746f74616c3f6c6162656c3d546f74616c253230646f776e6c6f616473267374796c653d666c61742d737175617265">
                 </p>
                 <a href="#" aria-label="Example" onclick="event.preventDefault()"><img src="assets/images/bansync.jpg"
                         width="450px" alt="Architecture"></a>
-                <p>
+                <p id="bansynctextwrap">
                     <a href="#" onclick="event.preventDefault()">BanSync</a><br>
                     <small>A discord bot to review & manage bans across servers</small>
                 </p>
@@ -125,6 +126,31 @@
 
     <script src="assets/js/particles.min.js"></script>
     <script>
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            fetchGuilds();
+        });
+
+
+        function fetchGuilds() {
+            fetch('https://corsproxy.slluxx.workers.dev/https://top.gg/api/client/entities/search?platform=discord&entityType=bot&skip=0&query=bansync&tags=moderation&categorySlot=more-like-this&amount=1', {
+                method: 'GET', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                    img = document.createElement("img");
+                    img.src = "https://img.shields.io/badge/Serving%20Guilds-"+ data.results[0].socialCount.toString() +"-brightgreen?style=flat-square"
+                    document.getElementById("bansynctextwrap").appendChild(document.createElement("br"))
+                    document.getElementById("bansynctextwrap").appendChild(img)
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
         particlesJS("particles-js", {
             "particles": {
                 "number": {
