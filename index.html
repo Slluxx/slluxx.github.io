@@ -4,87 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calvin Fuchs Portfolio</title>
+    <title>Calvin Fuchs - Portfolio</title>
     <meta name="description"
-        content="Custom CSS build with the Bootstrap grid system to manage complex grid layouts in Pico.">
+        content="My personal page.">
     <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-    <style>
-        :root {
-            --spacing-company: 3rem;
-            --font-weight: 400;
-            --border-radius: 0;
-        }
-
-        /* Typography */
-        h2,
-        h3,
-        hgroup> :last-child {
-            font-weight: 200;
-        }
-
-        small {
-            color: var(--muted-color);
-        }
-
-
-        /* Header */
-        .hero {
-            background-color: #394046;
-            background-image: url("assets/sascha-eremin-DNQ-M93tHmA-unsplash-3000x1000.jpg");
-            background-position: center;
-            background-size: cover;
-        }
-
-        header {
-            padding: var(--spacing-company) 0;
-        }
-
-        header hgroup> :last-child {
-            color: var(--h3-color);
-        }
-
-        header hgroup {
-            margin-bottom: var(--spacing-company);
-        }
-
-        /* Nav */
-        summary[role="link"].contrast:is([aria-current], :hover, :active, :focus) {
-            background-color: transparent;
-            color: var(--contrast-hover);
-        }
-
-        /* Main */
-        @media (min-width: 992px) {
-            main .grid {
-                grid-column-gap: var(--spacing-company);
-                grid-template-columns: auto 25%;
-            }
-        }
-
-        form.grid {
-            grid-row-gap: 0;
-        }
-
-        /* Aside nav */
-        aside img {
-            margin-bottom: 0.25rem;
-        }
-
-        aside p {
-            margin-bottom: var(--spacing-company);
-            line-height: 1.25;
-        }
-
-        .test {
-            box-shadow: inset 0 -58px 11px -26px #11191f;
-            position: relative;
-        }
-
-        .particles-js-canvas-el {
-            position: absolute !important;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
 <body>
@@ -144,7 +69,7 @@
                 <ul>
                     <li><a href="#" data-contact="ZnVjaHMuY2FsdmluQGdteC5uZXQ=" data-subj="TGV0cyBnZXQgaW4gdG91Y2g="
                         onmouseover="this.href = 'mailto:' + atob(this.dataset.contact) + '?subject=' + atob(this.dataset.subj || '')">
-                            Send an email
+                            Send an Email
                         </a></li>
                     <li>
                         Discord: Slluxx#7598
@@ -155,21 +80,21 @@
             </section>
 
             <aside>
-                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img src="assets/dslogo.png"
+                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img src="assets/images/dslogo.png"
                         width="450px" alt="Architecture"></a>
                 <p>
                     <a href="https://github.com/Team-Neptune/DeepSea" onclick="event.preventDefault()">Team Neptune's
                         DeepSea</a><br>
                     <small>A custom firmware package for the Nintendo Switch including self-developed homebrew</small>
                 </p>
-                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img src="assets/bansync.jpg"
+                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img src="assets/images/bansync.jpg"
                         width="450px" alt="Architecture"></a>
                 <p>
                     <a href="#" onclick="event.preventDefault()">BanSync</a><br>
                     <small>A discord bot to review & manage bans across servers</small>
                 </p>
                 <a href="#" aria-label="Example" onclick="event.preventDefault()"><img width="450px"
-                        src="assets/pokemontv.jpg" alt="Architecture" title=""></a>
+                        src="assets/images/pokemontv.jpg" alt="Architecture" title=""></a>
                 <p>
                     <a href="#" onclick="event.preventDefault()">PokemonTV</a><br>
                     <small>An unofficial (but legal) 3rd party auto-updating PokemonTV client</small>
@@ -193,12 +118,12 @@
 
             •
 
-            Other stats soon
+            other stats soon
 
         </small>
     </footer><!-- ./ Footer -->
 
-    <script src="assets/particles.min.js"></script>
+    <script src="assets/js/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {
             "particles": {
