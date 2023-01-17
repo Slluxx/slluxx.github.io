@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
-<body>
+<body id="app">
     <div class="test">
         <div id="particles-js"></div>
         <header class="container">
@@ -79,25 +79,25 @@
             </section>
 
             <aside>
-                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img src="assets/images/dslogo.png"
-                        width="450px" alt="Architecture"></a>
+                <a href="#" aria-label="Example" onclick="event.preventDefault()">
+                    <img src="assets/images/dslogo.png">
+                </a>
                 <p>
-                    <a href="https://github.com/Team-Neptune/DeepSea" onclick="event.preventDefault()">Team Neptune's
-                        DeepSea</a><br>
+                    <a href="https://github.com/Team-Neptune/DeepSea">Team Neptune's DeepSea</a></br>
                     <small>A custom firmware package for the Nintendo Switch</small></br>
                     <img
                         src="https://camo.githubusercontent.com/1d3ad2548fb8c3d19377aa1713a9f514706cc750d64aca4574b117515f599a8e/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732f5465616d2d4e657074756e652f446565705365612f746f74616c3f6c6162656c3d546f74616c253230646f776e6c6f616473267374796c653d666c61742d737175617265">
                 </p>
-                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img src="assets/images/bansync.jpg"
-                        width="450px" alt="Architecture"></a>
+                <a href="#" aria-label="Example" onclick="event.preventDefault()">
+                    <img src="assets/images/bansync.jpg"></a>
                 <p id="bansynctextwrap">
-                    <a href="#" onclick="event.preventDefault()">BanSync</a><br>
+                    <a href="#" onclick="event.preventDefault()">BanSync</a> (private)<br>
                     <small>A discord bot to review & manage bans across servers</small>
                 </p>
-                <a href="#" aria-label="Example" onclick="event.preventDefault()"><img width="450px"
-                        src="assets/images/pokemontv.jpg" alt="Architecture" title=""></a>
+                <a href="#" aria-label="Example" onclick="event.preventDefault()">
+                    <img src="assets/images/pokemontv.jpg"></a>
                 <p>
-                    <a href="#" onclick="event.preventDefault()">PokemonTV</a><br>
+                    <a href="https://slluxx.github.io/pokemontv/">PokemonTV</a><br>
                     <small>An unofficial (but legal) 3rd party auto-updating PokemonTV client</small>
                 </p>
             </aside>
@@ -113,155 +113,171 @@
     <!-- Footer -->
     <footer class="container">
         <small>
-
+            <!--
             <img alt="GitHub User's stars"
                 src="https://img.shields.io/github/stars/slluxx?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=GitHub%20Stars&style=flat-square">
 
-            •
+            •-->
 
-            other stats soon
+            made with VueJS
 
         </small>
     </footer><!-- ./ Footer -->
 
     <script src="assets/js/particles.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
+        const { createApp } = Vue
 
-        window.addEventListener('DOMContentLoaded', (event) => {
-            fetchGuilds();
-        });
-
-
-        function fetchGuilds() {
-            fetch('https://corsproxy.slluxx.workers.dev/https://top.gg/api/client/entities/search?platform=discord&entityType=bot&skip=0&query=bansync&tags=moderation&categorySlot=more-like-this&amount=1', {
-                method: 'GET', // or 'PUT'
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Success:', data);
-                    img = document.createElement("img");
-                    img.src = "https://img.shields.io/badge/Serving%20Guilds-"+ data.results[0].socialCount.toString() +"-brightgreen?style=flat-square"
-                    document.getElementById("bansynctextwrap").appendChild(document.createElement("br"))
-                    document.getElementById("bansynctextwrap").appendChild(img)
+        createApp({
+            mounted() {
+                window.addEventListener('load', () => {
+                    // run after everything is in-place
+                    particlesJS("particles-js", this.particleJsSettings);
+                    this.fetchGuilds();
                 })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-        }
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 40,
-                    "density": {
-                        "enable": true,
-                        "value_area": 394.57382081613633
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    },
-                    "image": {
-                        "src": "img/github.svg",
-                        "width": 100,
-                        "height": 100
-                    }
-                },
-                "opacity": {
-                    "value": 0.1,
-                    "random": false,
-                    "anim": {
-                        "enable": true,
-                        "speed": .1,
-                        "opacity_min": 0.1,
-                        "sync": true
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 120,
-                    "color": "#ffffff",
-                    "opacity": 0.1,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 3.1565905665290903,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "bounce",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
+            },
+            created() {
+
+            },
+            data() {
+                return {
+                    particleJsSettings: {
+                        "particles": {
+                            "number": {
+                                "value": 40,
+                                "density": {
+                                    "enable": true,
+                                    "value_area": 394.57382081613633
+                                }
+                            },
+                            "color": {
+                                "value": "#ffffff"
+                            },
+                            "shape": {
+                                "type": "circle",
+                                "stroke": {
+                                    "width": 0,
+                                    "color": "#000000"
+                                },
+                                "polygon": {
+                                    "nb_sides": 5
+                                },
+                                "image": {
+                                    "src": "img/github.svg",
+                                    "width": 100,
+                                    "height": 100
+                                }
+                            },
+                            "opacity": {
+                                "value": 0.1,
+                                "random": false,
+                                "anim": {
+                                    "enable": true,
+                                    "speed": .1,
+                                    "opacity_min": 0.1,
+                                    "sync": true
+                                }
+                            },
+                            "size": {
+                                "value": 3,
+                                "random": false,
+                                "anim": {
+                                    "enable": false,
+                                    "speed": 40,
+                                    "size_min": 0.1,
+                                    "sync": false
+                                }
+                            },
+                            "line_linked": {
+                                "enable": true,
+                                "distance": 120,
+                                "color": "#ffffff",
+                                "opacity": 0.1,
+                                "width": 1
+                            },
+                            "move": {
+                                "enable": true,
+                                "speed": 3.1565905665290903,
+                                "direction": "none",
+                                "random": false,
+                                "straight": false,
+                                "out_mode": "bounce",
+                                "bounce": false,
+                                "attract": {
+                                    "enable": false,
+                                    "rotateX": 600,
+                                    "rotateY": 1200
+                                }
+                            }
+                        },
+                        "interactivity": {
+                            "detect_on": "canvas",
+                            "events": {
+                                "onhover": {
+                                    "enable": true,
+                                    "mode": "bubble"
+                                },
+                                "onclick": {
+                                    "enable": true,
+                                    "mode": "push"
+                                },
+                                "resize": true
+                            },
+                            "modes": {
+                                "grab": {
+                                    "distance": 179.82017982017982,
+                                    "line_linked": {
+                                        "opacity": 1
+                                    }
+                                },
+                                "bubble": {
+                                    "distance": 40.0,
+                                    "size": 10.0,
+                                    "duration": 2,
+                                    "opacity": 0.2,
+                                    "speed": 3
+                                },
+                                "repulse": {
+                                    "distance": 200,
+                                    "duration": 0.4
+                                },
+                                "push": {
+                                    "particles_nb": 4
+                                },
+                                "remove": {
+                                    "particles_nb": 2
+                                }
+                            }
+                        },
+                        "retina_detect": true
                     }
                 }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "bubble"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 179.82017982017982,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 40.0,
-                        "size": 10.0,
-                        "duration": 2,
-                        "opacity": 0.2,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
+            methods: {
+                fetchGuilds() {
+                    fetch('https://corsproxy.slluxx.workers.dev/https://top.gg/api/client/entities/search?platform=discord&entityType=bot&skip=0&query=bansync&tags=moderation&categorySlot=more-like-this&amount=1', {
+                        method: 'GET', // or 'PUT'
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log('Success:', data);
+                            img = document.createElement("img");
+                            img.src = "https://img.shields.io/badge/Serving%20Guilds-" + data.results[0].socialCount.toString() + "-brightgreen?style=flat-square"
+                            document.getElementById("bansynctextwrap").appendChild(document.createElement("br"))
+                            document.getElementById("bansynctextwrap").appendChild(img)
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
                 }
             },
-            "retina_detect": true
-        });
+        }).mount('#app')
     </script>
+
 
 
 </body>
