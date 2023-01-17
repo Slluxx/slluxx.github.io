@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
-<body id="app">
+<body id="app" writeit-auto-start>
     <div class="test">
         <div id="particles-js"></div>
         <header class="container">
             <hgroup>
-                <h1>Hi, my name is Calvin.</h1>
+                <h1><span writeit-start-delay='1' writeit-speed='7' writeit-animate>Hi, my name is Calvin.</span></h1>
                 <h2>I am a fullstack programmer with a passion for hacking & reverse-engineering,</br>unlocking the
                     power of
                     technology, one line of code at a time.</a></h2>
@@ -41,18 +41,26 @@
                 <hgroup>
                     <h2>About me</h2>
                     <!--<h3>if you read this, you are cool</h3>-->
-                </hgroup>
+                </hgroup>                
                 <p>With over a decade of experience in software development, I have honed my skills in creating
-                    efficient,
-                    well-designed full stack applications. </br></br>My passion for coding extends beyond my
-                    professional work, as I spend
-                    my free time developing bots, reverse engineering APIs, and exploring the intricacies of binary
-                    code. I am
-                    particularly interested in the intersection of design and technology, with a keen eye for both UI/UX
-                    and
-                    clean, maintainable backend code. </br></br>I am constantly amazed by the capabilities of a few
-                    lines of code and the
+                    efficient, well-designed full stack applications.
+                </p>
+
+                <p>
+                    Driven by my passion for hacking, reverse-engineering, and AI, I am always looking for ways to push the
+                    boundaries of what is possible with technology. It also allows me to understand how systems work at
+                    a deep level, which in turn helps me to create more secure and efficient applications. Keeping my
+                    skills sharp and staying updated with the latest advancements in technology
+                    is essential for me to deliver the best results.
+                </p>
+
+                <p> My passion for coding extends beyond my
+                    professional work, as I spend my free time developing bots, reverse engineering APIs, and
+                    exploring the intricacies of binary code. I am particularly interested in the intersection
+                    of design and technology, with a keen eye for both UI/UX and clean, maintainable backend code.
+                    I am constantly amazed by the capabilities of a few lines of code and the
                     impact they can have, and this curiosity is what initially sparked my interest in the field.</p>
+
 
                 <!--
                 <figure>
@@ -123,7 +131,7 @@
 
         </small>
     </footer><!-- ./ Footer -->
-
+    
     <script src="assets/js/particles.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
@@ -134,6 +142,7 @@
                 window.addEventListener('load', () => {
                     // run after everything is in-place
                     particlesJS("particles-js", this.particleJsSettings);
+                    WriteItJS.startAnimation()
                     this.fetchGuilds();
                 })
             },
@@ -277,7 +286,7 @@
             },
         }).mount('#app')
     </script>
-
+    <script src="assets/js/WriteIt.min.js"></script>
 
 
 </body>
