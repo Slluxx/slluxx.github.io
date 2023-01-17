@@ -18,66 +18,45 @@
             <hgroup>
                 <h1><span writeit-start-delay='1' writeit-speed='7' writeit-animate>Hi, my name is Calvin.</span></h1>
                 <h2>I am a fullstack programmer with a passion for hacking & reverse-engineering,</br>unlocking the
-                    power of
-                    technology, one line of code at a time.</a></h2>
+                    power of technology, one line of code at a time.</a></h2>
             </hgroup>
         </header>
     </div>
-
-    <!--
-    <section class="container">
-        <p>With a decade of experience in software development, I have honed my skills in creating efficient,
-            well-designed full stack applications. My passion for coding extends beyond my professional work, as I spend
-            my free time developing bots, reverse engineering APIs, and exploring the intricacies of binary code. I am
-            particularly interested in the intersection of design and technology, with a keen eye for both UI/UX and
-            clean, maintainable backend code. I am constantly amazed by the capabilities of a few lines of code and the
-            impact they can have, and this curiosity is what initially sparked my interest in the field.</p>
-    </section>
-    -->
 
     <main class="container">
         <div class="grid">
             <section>
                 <hgroup>
                     <h2>About me</h2>
-                    <!--<h3>if you read this, you are cool</h3>-->
-                </hgroup>                
+                </hgroup>
                 <p>With over a decade of experience in software development, I have honed my skills in creating
                     efficient, well-designed full stack applications.
                 </p>
 
                 <p>
-                    Driven by my passion for hacking, reverse-engineering, and AI, I am always looking for ways to push the
-                    boundaries of what is possible with technology. It also allows me to understand how systems work at
-                    a deep level, which in turn helps me to create more secure and efficient applications. Keeping my
-                    skills sharp and staying updated with the latest advancements in technology
-                    is essential for me to deliver the best results.
+                    Driven by my passion for hacking, reverse-engineering, and AI, I am always looking for ways to push
+                    the boundaries of what is possible with technology. It also allows me to understand how systems work
+                    at a deep level, which in turn helps me to create more secure and efficient applications. Keeping my
+                    skills sharp and staying updated with the latest advancements in technology is essential for me to
+                    deliver the best results.
                 </p>
 
-                <p> My passion for coding extends beyond my
-                    professional work, as I spend my free time developing bots, reverse engineering APIs, and
-                    exploring the intricacies of binary code. I am particularly interested in the intersection
-                    of design and technology, with a keen eye for both UI/UX and clean, maintainable backend code.
-                    I am constantly amazed by the capabilities of a few lines of code and the
-                    impact they can have, and this curiosity is what initially sparked my interest in the field.</p>
-
-
-                <!--
-                <figure>
-                    <img width="450px" src="assets/pokemontv.jpg" alt="Architecture" title="">
-                    <figcaption>Image from <a href="https://unsplash.com/photos/3Ijt7UkSBYE"
-                            target="_blank">unsplash.com</a></figcaption>
-                </figure>
-                 -->
-
+                <p> My passion for coding extends beyond my professional work, as I spend my free time developing bots,
+                    reverse engineering APIs, and exploring the intricacies of binary code. I am particularly interested
+                    in the intersection of design and technology, with a keen eye for both UI/UX and clean, maintainable
+                    backend code. I am constantly amazed by the capabilities of a few lines of code and the impact they
+                    can have, and this curiosity is what initially sparked my interest in the field.</p>
 
                 <h3>Get in touch</h3>
                 <p>
                 <ul>
-                    <li><a href="#" data-contact="ZnVjaHMuY2FsdmluQGdteC5uZXQ=" data-subj="TGV0cyBnZXQgaW4gdG91Y2g="
+                    <li>
+                        <!-- This looks weird but it is to stop scraper bots to get my email -->
+                        <a href="#" data-contact="ZnVjaHMuY2FsdmluQGdteC5uZXQ=" data-subj="TGV0cyBnZXQgaW4gdG91Y2g="
                             onmouseover="this.href = 'mailto:' + atob(this.dataset.contact) + '?subject=' + atob(this.dataset.subj || '')">
                             Send an Email
-                        </a></li>
+                        </a>
+                    </li>
                     <li>
                         Discord: Slluxx#7598
                     </li>
@@ -99,39 +78,26 @@
                 <a href="#" aria-label="Example" onclick="event.preventDefault()">
                     <img src="assets/images/bansync.jpg"></a>
                 <p id="bansynctextwrap">
-                    <a href="#" onclick="event.preventDefault()">BanSync</a> (private)<br>
+                    <a href="#" onclick="event.preventDefault()">BanSync</a> (private)</br>
                     <small>A discord bot to review & manage bans across servers</small>
                 </p>
                 <a href="#" aria-label="Example" onclick="event.preventDefault()">
                     <img src="assets/images/pokemontv.jpg"></a>
                 <p>
-                    <a href="https://slluxx.github.io/pokemontv/">PokemonTV</a><br>
+                    <a href="https://slluxx.github.io/pokemontv/">PokemonTV</a></br>
                     <small>An unofficial (but legal) 3rd party auto-updating PokemonTV client</small>
                 </p>
             </aside>
 
         </div>
-    </main><!-- ./ Main -->
+    </main>
 
-
-
-
-
-
-    <!-- Footer -->
     <footer class="container">
         <small>
-            <!--
-            <img alt="GitHub User's stars"
-                src="https://img.shields.io/github/stars/slluxx?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=GitHub%20Stars&style=flat-square">
-
-            •-->
-
             made with VueJS
-
         </small>
-    </footer><!-- ./ Footer -->
-    
+    </footer>
+
     <script src="assets/js/particles.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
@@ -140,15 +106,12 @@
         createApp({
             mounted() {
                 window.addEventListener('load', () => {
-                    // run after everything is in-place
                     particlesJS("particles-js", this.particleJsSettings);
                     WriteItJS.startAnimation()
                     this.fetchGuilds();
                 })
             },
-            created() {
-
-            },
+            created() { },
             data() {
                 return {
                     particleJsSettings: {
@@ -265,15 +228,20 @@
             },
             methods: {
                 fetchGuilds() {
+                    // the top.gg api is not fetchable from other websites because of CORS,
+                    // however i have a reverse proxy running via "cloudflare workers" that can
+                    // pass me the content i want.
                     fetch('https://corsproxy.slluxx.workers.dev/https://top.gg/api/client/entities/search?platform=discord&entityType=bot&skip=0&query=bansync&tags=moderation&categorySlot=more-like-this&amount=1', {
-                        method: 'GET', // or 'PUT'
+                        method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                     })
                         .then((response) => response.json())
                         .then((data) => {
-                            console.log('Success:', data);
+                            // with with vue i should solve this differently, however if i use v-if to
+                            // hide and then display an image, it will flicker in/out noticably when vue
+                            // is getting initialized (because i am using the CDN version).
                             img = document.createElement("img");
                             img.src = "https://img.shields.io/badge/Serving%20Guilds-" + data.results[0].socialCount.toString() + "-brightgreen?style=flat-square"
                             document.getElementById("bansynctextwrap").appendChild(document.createElement("br"))
@@ -287,8 +255,6 @@
         }).mount('#app')
     </script>
     <script src="assets/js/WriteIt.min.js"></script>
-
-
 </body>
 
 </html>
